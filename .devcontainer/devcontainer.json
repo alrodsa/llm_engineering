@@ -1,0 +1,42 @@
+{
+  "name": "LLM Engineering",
+  "build": {
+    "context": "..",
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspaces/llm_engineering",
+  "runArgs": ["--env-file", ".devcontainer/.env"],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
+        "python.terminal.activateEnvironment": true,
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      },
+      "extensions": [
+        "eamodio.gitlens",
+        "DavidAnson.vscode-markdownlint",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "tamasfe.even-better-toml",
+        "vscode-icons-team.vscode-icons",
+        "charliermarsh.ruff",
+        "shakram02.bash-beautify",
+        "SeyyedKhandon.firacode",
+        "github.vscode-github-actions",
+        "redhat.vscode-yaml",
+        "esbenp.prettier-vscode",
+        "SanjulaGanepola.github-local-actions",
+        "actboy168.tasks",
+        "qwtel.sqlite-viewer",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter",
+        "bierner.markdown-mermaid"
+      ]
+    }
+  },
+  "postAttachCommand": "bash .devcontainer/post-attach.sh",
+  "remoteUser": "vscode"
+}
