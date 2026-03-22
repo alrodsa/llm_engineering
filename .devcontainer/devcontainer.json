@@ -37,6 +37,7 @@
       ]
     }
   },
+  "initializeCommand": "bash .devcontainer/check-env.sh",
   "postAttachCommand": "bash .devcontainer/post-attach.sh",
   "remoteUser": "vscode"
 }

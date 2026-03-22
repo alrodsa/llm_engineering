@@ -2,13 +2,7 @@
 set -euo pipefail
 
 # -------------------------------------------------------
-# 1. Validate .env file exists and has required variables
-# -------------------------------------------------------
-echo "🔍 Checking environment configuration..."
-bash .devcontainer/check-env.sh
-
-# -------------------------------------------------------
-# 2. Set up Python virtual environment
+# 1. Set up Python virtual environment
 # -------------------------------------------------------
 VENV_DIR=".venv"
 
