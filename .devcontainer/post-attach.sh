@@ -16,3 +16,18 @@ else
 fi
 
 echo "✅ Environment ready."
+
+# -------------------------------------------------------
+# 2. Start Ollama server in the background
+# -------------------------------------------------------
+if command -v ollama &>/dev/null; then
+  if ! pgrep -x ollama &>/dev/null; then
+    echo "🦙 Starting Ollama server in the background..."
+    nohup ollama serve &>/tmp/ollama.log &
+    echo "   Ollama PID: $! — logs at /tmp/ollama.log"
+  else
+    echo "🦙 Ollama is already running."
+  fi
+else
+  echo "⚠️  Ollama not found. Skipping."
+fi
