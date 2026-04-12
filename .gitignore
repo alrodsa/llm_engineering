@@ -123,6 +123,9 @@ celerybeat.pid
 
 # Environments
 .env
+.devcontainer/devcontainer.json
+.devcontainer/variables/.env
+.devcontainer/variables/.host-gpu.env
 .venv
 env/
 venv/

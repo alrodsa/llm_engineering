@@ -2,16 +2,16 @@
   "name": "LLM Engineering",
   "build": {
     "context": "..",
-    "dockerfile": "Dockerfile"
+    "dockerfile": "containers/cpu.Dockerfile"
   },
   "workspaceFolder": "/workspaces/llm_engineering",
-  "runArgs": ["--env-file", ".devcontainer/.env"],
+  "runArgs": ["--env-file", ".devcontainer/variables/.env"],
   "customizations": {
     "vscode": {
       "settings": {
         "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
         "python.terminal.activateEnvironment": true,
-        "terminal.integrated.defaultProfile.linux": "zsh"
+        "terminal.integrated.defaultProfile.linux": "bash"
       },
       "extensions": [
         "eamodio.gitlens",
@@ -38,7 +38,7 @@
       ]
     }
   },
-  "initializeCommand": "bash .devcontainer/check-env.sh",
-  "postAttachCommand": "bash .devcontainer/post-attach.sh",
+  "initializeCommand": "bash .devcontainer/scripts/check-env.sh",
+  "postAttachCommand": "bash .devcontainer/scripts/post-attach.sh",
   "remoteUser": "vscode"
 }
