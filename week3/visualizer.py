@@ -3,9 +3,6 @@ import matplotlib.pyplot as plt
 from typing import List, Dict
 import math
 from openai import OpenAI
-from dotenv import load_dotenv
-
-load_dotenv(override=True)
 
 
 class TokenPredictor:

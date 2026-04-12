@@ -1,0 +1,20 @@
+{
+  "name": "Synthetic Profile Generator",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": false,
+      "installOhMyZsh": false
+    }
+  },
+  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+  "postAttachCommand": "bash .devcontainer/post-attach.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "charliermarsh.ruff"
+      ]
+    }
+  }
+}
