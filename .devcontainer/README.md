@@ -13,8 +13,6 @@ The idea is to select the profile first, then open or rebuild the container.
 4. Based on that result, it activates the correct profile in `.devcontainer/devcontainer.json`.
 5. Open the container from VS Code:
 	- `Dev Containers: Reopen in Container`
-6. If you were already inside the container or changed profile, use:
-	- `Dev Containers: Rebuild and Reopen in Container`
 
 ## Quick Option: Select Profile + Rebuild
 
