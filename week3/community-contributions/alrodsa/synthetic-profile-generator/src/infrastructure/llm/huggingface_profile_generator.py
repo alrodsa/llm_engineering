@@ -2,10 +2,11 @@ import json
 import re
 
 import torch
+from huggingface_hub import login
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, pipeline
 
-from app.domain.entities.profile import Profile
-from app.domain.services.profile_generator import ProfileGenerator
+from src.domain.entities.profile import Profile
+from src.domain.services.profile_generator import ProfileGenerator
 
 DEFAULT_QUANT_CONFIG = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -20,9 +21,16 @@ class HuggingFaceProfileGenerator(ProfileGenerator):
     def __init__(
         self,
         model_name: str,
+        hf_token: str,
         max_new_tokens: int = 2048,
-        quantization_config: BitsAndBytesConfig | None = None,
+        quantization_config: BitsAndBytesConfig | None = DEFAULT_QUANT_CONFIG,
     ):
+        if not hf_token:
+            raise ValueError(
+                "HuggingFace token is required. Set the HF_TOKEN environment variable."
+            )
+        login(hf_token, add_to_git_credential=True)
+
         self._model_name = model_name
         self._max_new_tokens = max_new_tokens
 
@@ -66,6 +74,7 @@ class HuggingFaceProfileGenerator(ProfileGenerator):
             '- "email": string (unique, realistic, @example.com)\n'
             '- "interests": array of 3 to 5 strings\n'
             '- "bio": string (1-2 sentences)\n'
+            '- "source_type": "synthetic"\n\n'
             "Rules:\n"
             "- All emails must be unique\n"
             "- Data must be realistic but entirely fictional\n"

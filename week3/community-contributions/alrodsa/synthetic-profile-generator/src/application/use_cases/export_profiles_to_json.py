@@ -1,5 +1,5 @@
-from app.domain.repositories.profile_repository import ProfileRepository
-from app.infrastructure.exporters.json_exporter import JsonExporter
+from src.domain.repositories.profile_repository import ProfileRepository
+from src.infrastructure.exporters.json_exporter import JsonExporter
 
 
 class ExportProfilesToJsonUseCase:

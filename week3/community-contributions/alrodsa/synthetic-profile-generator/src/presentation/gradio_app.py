@@ -1,8 +1,8 @@
 import gradio as gr
 
-from app.application.use_cases.generate_profiles import GenerateProfilesUseCase
-from app.application.use_cases.export_profiles_to_json import ExportProfilesToJsonUseCase
-from app.application.use_cases.count_profiles import CountProfilesUseCase
+from src.application.use_cases.generate_profiles import GenerateProfilesUseCase
+from src.application.use_cases.export_profiles_to_json import ExportProfilesToJsonUseCase
+from src.application.use_cases.count_profiles import CountProfilesUseCase
 
 
 class GradioApp:

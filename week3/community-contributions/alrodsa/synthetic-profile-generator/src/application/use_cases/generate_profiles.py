@@ -1,7 +1,9 @@
-from app.domain.repositories.profile_repository import ProfileRepository
-from app.domain.services.profile_generator import ProfileGenerator
-from app.infrastructure.validation.profile_validator import ProfileValidator
-from app.application.dto.profile_dto import ProfileDTO
+from dataclasses import dataclass
+
+from src.domain.repositories.profile_repository import ProfileRepository
+from src.domain.services.profile_generator import ProfileGenerator
+from src.infrastructure.validation.profile_validator import ProfileValidator
+from src.application.dto.profile_dto import ProfileDTO
 
 @dataclass(frozen=True, slots=True)
 class GenerateProfilesUseCase:

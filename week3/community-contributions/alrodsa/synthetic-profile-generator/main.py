@@ -3,7 +3,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from src.config.settings import DB_PATH, EXPORT_PATH, LLM_MODEL_NAME, LLM_MAX_NEW_TOKENS
+from src.config.settings import DB_PATH, EXPORT_PATH, HF_TOKEN, LLM_MODEL_NAME, LLM_MAX_NEW_TOKENS
 from src.infrastructure.llm.huggingface_profile_generator import (
     HuggingFaceProfileGenerator,
     DEFAULT_QUANT_CONFIG,
@@ -23,7 +23,7 @@ def main():
     db = SQLiteConnection(DB_PATH)
     repository = SQLiteProfileRepository(db)
     generator = HuggingFaceProfileGenerator(
-        LLM_MODEL_NAME, LLM_MAX_NEW_TOKENS, quantization_config=DEFAULT_QUANT_CONFIG,
+        LLM_MODEL_NAME, HF_TOKEN, LLM_MAX_NEW_TOKENS, quantization_config=DEFAULT_QUANT_CONFIG,
     )
     exporter = JsonExporter()
     validator = ProfileValidator()

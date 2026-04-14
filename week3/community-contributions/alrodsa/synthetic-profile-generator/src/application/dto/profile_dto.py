@@ -11,6 +11,7 @@ class ProfileDTO:
     email: str
     interests: list[str]
     bio: str
+    source_type: str = field(default="synthetic")
 
     def to_dict(self) -> dict:
         return {
@@ -22,4 +23,5 @@ class ProfileDTO:
             "email": self.email,
             "interests": list(self.interests),
             "bio": self.bio,
+            "source_type": self.source_type,
         }

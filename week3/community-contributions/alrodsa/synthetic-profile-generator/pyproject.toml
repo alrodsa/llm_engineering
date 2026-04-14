@@ -1,9 +1,14 @@
 [project]
 name = "synthetic-profile-generator"
+authors = [
+    { name="Alvaro R.", email="alv.rodri95@outlook.com" }
+]
 version = "0.1.0"
 description = "Generate synthetic user profiles using LLMs, store in SQLite, interact via Gradio UI, and export to JSON."
 requires-python = ">=3.10"
 dependencies = [
+    "accelerate>=0.25",
+    "bitsandbytes>=0.46.1",
     "gradio>=4.0",
     "huggingface-hub>=0.20",
     "transformers>=4.36",
