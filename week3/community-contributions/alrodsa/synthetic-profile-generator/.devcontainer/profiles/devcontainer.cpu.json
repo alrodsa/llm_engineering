@@ -1,20 +1,11 @@
 {
-  "name": "synthetic-profile-generator (NVIDIA)",
+  "name": "synthetic-profile-generator",
   "build": {
     "context": "..",
-    "dockerfile": "containers/gpu.Dockerfile"
+    "dockerfile": "containers/cpu.Dockerfile"
   },
-  "workspaceFolder": "/workspaces/synthetic-profile-generator",
-  "runArgs": [
-    "--env-file",
-    ".devcontainer/variables/.env",
-    "--gpus",
-    "all"
-  ],
-  "containerEnv": {
-    "NVIDIA_VISIBLE_DEVICES": "all",
-    "NVIDIA_DRIVER_CAPABILITIES": "compute,utility"
-  },
+  "workspaceFolder": "",
+  "runArgs": ["--env-file", ".devcontainer/variables/.env"],
   "customizations": {
     "vscode": {
       "settings": {

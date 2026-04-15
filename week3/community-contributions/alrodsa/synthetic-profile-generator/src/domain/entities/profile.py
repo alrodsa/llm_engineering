@@ -11,3 +11,4 @@ class Profile:
     email: str
     interests: list[str]
     bio: str
+    source_type: str = field(default="synthetic")

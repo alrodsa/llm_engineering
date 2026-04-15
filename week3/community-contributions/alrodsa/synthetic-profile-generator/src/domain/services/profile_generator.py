@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from app.domain.entities.profile import Profile
+from src.domain.entities.profile import Profile
 
 
 class ProfileGenerator(ABC):

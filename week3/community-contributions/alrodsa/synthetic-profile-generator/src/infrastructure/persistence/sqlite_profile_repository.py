@@ -1,7 +1,7 @@
 from sqlalchemy import func, select
 
-from app.domain.entities.profile import Profile
-from app.domain.repositories.profile_repository import ProfileRepository
+from src.domain.entities.profile import Profile
+from src.domain.repositories.profile_repository import ProfileRepository
 from src.infrastructure.persistence.models import InterestModel, ProfileModel
 from src.infrastructure.persistence.sqlite_connection import SQLiteConnection
 

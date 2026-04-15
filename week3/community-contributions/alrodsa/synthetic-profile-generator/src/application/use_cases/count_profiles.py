@@ -1,4 +1,4 @@
-from app.domain.repositories.profile_repository import ProfileRepository
+from src.domain.repositories.profile_repository import ProfileRepository
 
 
 class CountProfilesUseCase:

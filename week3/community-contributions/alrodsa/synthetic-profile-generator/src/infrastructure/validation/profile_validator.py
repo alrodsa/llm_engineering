@@ -1,6 +1,6 @@
 import re
 
-from app.domain.entities.profile import Profile
+from src.domain.entities.profile import Profile
 
 EMAIL_PATTERN = re.compile(r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
 
