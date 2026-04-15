@@ -1,7 +1,6 @@
 # =============================
-# 🐍 DevContainer for Project llm_engineering
+# CPU base container
 # =============================
-
 FROM python:3.12-slim
 
 ENV DEBIAN_FRONTEND=noninteractive \
@@ -10,7 +9,6 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
     MPLBACKEND=Agg
 
-# Install essential system packages
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
     bash-completion \
     build-essential \
@@ -33,13 +31,9 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
-# Install uv (fast dependency and environment manager)
 RUN pip3 install --no-cache-dir uv
-
-# Install Ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
-# Create non-root user for VSCode DevContainer
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
@@ -52,7 +46,6 @@ RUN groupadd --gid $USER_GID $USERNAME \
 USER $USERNAME
 WORKDIR /workspaces/llm_engineering
 
-# Install Zsh with custom theme
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
     -t robbyrussell
 

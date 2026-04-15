@@ -58,6 +58,8 @@ ORIGINAL INSTRUCTIONS for people on the version prior to October 2025:
 - Mac people please follow the instructions here: [Original Mac instructions](setup/SETUP-mac.md)  
 - Linux people please follow the instructions here: [Original Linux instructions](setup/SETUP-linux.md)
 
+If you're using the repository devcontainer and need optional NVIDIA GPU support, see [.devcontainer/README.md](.devcontainer/README.md).
+
 ### An important point on API costs (which are optional! No need to spend if you don't wish)
 
 During the course, I'll suggest you try out the leading models at the forefront of progress, known as the Frontier models. I'll also suggest you run open-source models using Google Colab. These services have some charges, but I'll keep cost minimal - like, a few cents at a time. And I'll provide alternatives if you'd prefer not to use them.

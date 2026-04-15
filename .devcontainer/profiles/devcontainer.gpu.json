@@ -1,0 +1,53 @@
+{
+  "name": "LLM Engineering (NVIDIA)",
+  "build": {
+    "context": "..",
+    "dockerfile": "containers/gpu.Dockerfile"
+  },
+  "workspaceFolder": "/workspaces/llm_engineering",
+  "runArgs": [
+    "--env-file",
+    ".devcontainer/variables/.env",
+    "--gpus",
+    "all"
+  ],
+  "containerEnv": {
+    "NVIDIA_VISIBLE_DEVICES": "all",
+    "NVIDIA_DRIVER_CAPABILITIES": "compute,utility"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
+        "python.terminal.activateEnvironment": true,
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "eamodio.gitlens",
+        "DavidAnson.vscode-markdownlint",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "tamasfe.even-better-toml",
+        "vscode-icons-team.vscode-icons",
+        "charliermarsh.ruff",
+        "shakram02.bash-beautify",
+        "SeyyedKhandon.firacode",
+        "github.vscode-github-actions",
+        "redhat.vscode-yaml",
+        "esbenp.prettier-vscode",
+        "SanjulaGanepola.github-local-actions",
+        "actboy168.tasks",
+        "qwtel.sqlite-viewer",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter",
+        "bierner.markdown-mermaid",
+        "Google.colab"
+      ]
+    }
+  },
+  "initializeCommand": "bash .devcontainer/scripts/check-env.sh",
+  "postAttachCommand": "bash .devcontainer/scripts/post-attach.sh",
+  "remoteUser": "vscode"
+}
